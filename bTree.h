@@ -6,9 +6,11 @@
 namespace bTree
 {
     template<class T>
-    struct Node
+    class Node
     {
         T *data;
+
+        public:
         Node* left;
         Node* right;
 
@@ -17,6 +19,10 @@ namespace bTree
             data  = &data_in;
             left  = nullptr;
             right = nullptr;
+        }
+
+        T get_data() {
+            return *data;
         }
     };
 
