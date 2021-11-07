@@ -14,9 +14,9 @@ namespace bTree
         Node* left;
         Node* right;
 
-        Node(T &data_in)
+        Node(T* data_in)
         {
-            data  = &data_in;
+            data  = data_in;
             left  = nullptr;
             right = nullptr;
         }
@@ -43,7 +43,7 @@ namespace bTree
         bTree () {
             _head = nullptr;
         }
-        bTree (T &data_head){
+        bTree (T* data_head){
             _head = new Node<int>(data_head); 
         }
 
