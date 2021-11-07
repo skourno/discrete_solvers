@@ -43,7 +43,20 @@ namespace bTree
         bTree () {
             _head = nullptr;
         }
-        bTree (Node<T>* head) : _head(head) {}
+        bTree (T &data_head){
+            _head = new Node<int>(data_head); 
+        }
+
+        void delete_node(Node<T>* node) {
+            if (node->left) delete_node(node->left);
+            if (node->right) delete_node(node->right);
+            delete node;
+            node = nullptr;
+        }
+
+        ~bTree() {
+            delete_node(_head);
+        } 
 
         Node<T>* get_head() {
             return _head;
